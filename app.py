@@ -20,9 +20,30 @@ try:
 except Exception as e:
     st.warning(f"No se pudo cargar la imagen: {e}")
 
+page_style = """
+<style>
+/* Fondo principal */
+[data-testid="stAppViewContainer"] {
+    background-color: #fbae9f;
+}
+
+/* Fondo del sidebar */
+[data-testid="stSidebar"] {
+    background-color: #dd8567;
+}
+
+/* Color de todos los textos */
+[data-testid="stMarkdownContainer"] {
+    color: #0d0301;
+}
+</style>
+"""
+
+st.markdown(page_style, unsafe_allow_html=True)
+
 # Sidebar information
 with st.sidebar:
-    st.subheader("Este Agente te ayudará a realizar análisis sobre el PDF cargado")
+    st.subheader("Este Bot te ayudará a realizar análisis sobre el PDF cargado🤖✔")
 
 # Get API key from user
 ke = st.text_input('Ingresa tu Clave de OpenAI', type="password")
